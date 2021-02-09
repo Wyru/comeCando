@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 const getToken = async (code:string|undefined) => {
   const {data} = await axios.post('https://github.com/login/oauth/access_token',
   {
-    client_id: process.env.GITHUB_CLIENT_ID,
+    client_id: process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
     client_secret: process.env.GITHUB_CLIENT_SECRET,
     code
   },
@@ -41,7 +41,6 @@ const getUserData = async (token) => {
 
 const handle = async (request:NextApiRequest, response:NextApiResponse) => {
   try {
-    console.log(process.env.ALOMUNDO);
     const code =  request.query.code as string; 
     const token  = await getToken(code);
     const userData = await getUserData(token);

@@ -3,11 +3,11 @@ import Layout, { siteTitle } from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import { Button, Center } from '@chakra-ui/react'
 
-const CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 
 const Home  = ({ allPostsData }) => {
-
+  
   const callLoginWithGithub = () => {
+    const CLIENT_ID = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID;
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}`
   }
 
