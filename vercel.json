@@ -1,0 +1,8 @@
+{
+  "name": "comecando",
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "@my-mongodb-uri",
+    "NEXT_PUBLIC_GITHUB_CLIENT_ID": "@github-client-secret"
+  }
+}
