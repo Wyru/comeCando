@@ -1,11 +1,10 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { Button, Center } from '@chakra-ui/react'
-import { signOut, useSession } from 'next-auth/client'
-import { useState, useEffect } from "react";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { Button } from '@chakra-ui/react';
+import { signOut, useSession } from 'next-auth/client';
+import { useState, useEffect } from 'react';
 import LoadingScreen from '../../components/LoadingScreen';
 import AuthenticationCheck from '../../components/AuthenticationCheck';
-
 
 const App = () => {
   const [session, loading] = useSession();
@@ -15,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("/api/secret");
+      const res = await fetch('/api/secret');
       const json = await res.json();
 
       if (json.content) {
@@ -26,10 +25,9 @@ const App = () => {
     if (session && router) {
       fetchData();
     }
-
   }, [session, router]);
 
-  if (typeof window !== "undefined" && loading) return <LoadingScreen></LoadingScreen>;
+  if (typeof window !== 'undefined' && loading) return <LoadingScreen />;
 
   return (<AuthenticationCheck >
     <Head>
@@ -47,7 +45,6 @@ const App = () => {
       </div>
     </main>
   </AuthenticationCheck>);
-}
-
+};
 
 export default App;

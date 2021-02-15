@@ -4,13 +4,12 @@ import { URL } from 'url';
 let cachedDB: Db = null;
 
 const getDBConnection = async (uri: string): Promise<Db> => {
-
   if (cachedDB) {
     return cachedDB;
   }
   const client = await MongoClient.connect(uri, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
 
   const dbName = (new URL(uri)).pathname.substr(1);
@@ -20,7 +19,6 @@ const getDBConnection = async (uri: string): Promise<Db> => {
   cachedDB = db;
 
   return db;
-}
-
+};
 
 export default getDBConnection;
