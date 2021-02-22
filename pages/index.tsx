@@ -21,7 +21,6 @@ const Home = () => {
   useEffect(() => {
     if (!loading) {
       if (session) {
-        console.log('logado');
         router.push('/app');
       } else {
         console.log('deslogado!');
@@ -109,18 +108,15 @@ const Home = () => {
   );
 };
 
-const teste = 'será?';
-
-Home.getInitialProps = async (context) => {
+export const getInitialProps = async (context) => {
   const { req, res } = context;
   const session = await getSession({ req });
 
   if (session && res && session.accessToken) {
     res.writeHead(302, {
-      Location: '/dashboard',
+      Location: '/app',
     });
     res.end();
-    return {};
   }
 
   return {

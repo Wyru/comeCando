@@ -1,0 +1,17 @@
+.aside {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  width: min-content;
+}
+
+.dropDownMenu {
+  position: absolute;
+  top: 120px;
+  left: 5px;
+}
+
+.asideMenu {
+}

@@ -1,10 +1,9 @@
-import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/client'
-import { useEffect } from "react";
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/client';
+import { useEffect } from 'react';
 import LoadingScreen from '../LoadingScreen';
 
 const AuthenticationCheck = ({ children }) => {
-
   const [session, loading] = useSession();
   const router = useRouter();
 
@@ -14,12 +13,11 @@ const AuthenticationCheck = ({ children }) => {
     }
   }, [session, router]);
 
-  if (typeof window !== "undefined" && loading || !session) return null;
+  if (typeof window !== 'undefined' && loading || !session) return null;
 
   return (<>
     {children}
   </>);
-}
-
+};
 
 export default AuthenticationCheck;

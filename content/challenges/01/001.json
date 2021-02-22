@@ -1,0 +1,17 @@
+{
+  "challenges": [
+    {
+      "id": "0001-0001",
+      "title":"Alô. Mundo!",
+      "description": "Seguindo a boa e velha tradição, ao começar a aprender uma nova linguagem de programação devemos sempre comeÇar por um \"Hello, World\", caso contrário  estaremos fadados a nunca conseguir aprende-la.",
+      "input": {
+        "description": "Nenhum parâmetro de entrada",
+        "example":[""]
+      },
+      "output": {
+        "description": " Escreva um programa que imprima o texto \"Alô, Mundo!\"",
+        "example":["Alô. Mundo!"]
+      }
+    }
+  ]
+}
